@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+@fontSize1:14px;
+@fontSize2:16px;
+@fontSize3:20px;
+@fontCol:#333;
+@headBgCol:#004B99;
+@hoverBgCol:#e8e8e8;
+@hosBgCol:#f8f8ff;
+@bdCol:#c8c8c8;
+@whiteCol:#fff;
+@orangeCol:#fba432;
+
+
+.wh(@w,@h:auto,@lh:@h){
+    width: @w;
+    height: @h;
+    line-height: @lh;
+}
+.h(@h,@lh:@h){
+    height: @h;
+    line-height: @lh;
+}
+.border(bottom,@width:2px,@color:@bdCol,@style:solid){
+    border-bottom:@arguments;
+}
+.border(top,@width:2px,@color:@bdCol,@style:solid){
+    border-top:@arguments;
+}
+.border(@width:2px,@color:@bdCol,@style:solid){
+    border:@arguments;
+}
+.font(@size:@fontSize1,@color:@fontCol){
+    font-size: @size;
+    color: @color;
+}
+.mulE(@lh,@num){//多行文本省略
+    max-height: @lh*@num;
+    line-height: @lh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @num;
+    display: -webkit-box;
+}
+.singleE {//单行文本省略
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.orange{
+    color: @orangeCol;
+}
+
+a{
+    text-decoration: none;
+    color: @fontCol;
+}
+a:hover{
+    text-decoration: none;
+    color: @fontCol;
+}
+body{
+    font-size: @fontSize1;
+}
+
+.layer{
+    width: 1200px;
+    margin: 0 auto;
+}
+.inputWrapper{
+    display: flex;
+    label{
+//      text-align: right;
+    }
+    input{
+        height: 30px;
+        padding: 5px;
+        .border();
+        border-radius: 6px;
+    }   
+}
+.input-s{
+    width: 85px;
+}
